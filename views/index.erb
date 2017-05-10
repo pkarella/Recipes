@@ -1,0 +1,29 @@
+
+<h1>Welcome to the recipe page</h1>
+
+
+
+<div class="well">
+  <% if @recipes.any?()%>
+    <h3>Click here to edit</h3>
+    <ul>
+      <%@recipes.each() do |single_recipe|%>
+      <li><a href=/<%=single_recipe.name%></li>
+      <li><%=single_recipe.ingredients%></li>
+      <li><%=single_recipe.instructions%></li>
+    </ul>
+    <%end%>
+    <%end%>
+</div>
+
+
+<form action="/recipe_form" method="post">
+  <label for="name">Enter the name of your recipe</label>
+  <input type="text" name="name">
+  <label for="name">Enter the name of your ingredients</label>
+  <input type="text" name="ingredients">
+  <label for="name">Enter the name of your instructions</label>
+  <input type="text" name="instructions">
+
+  <button type="submit"></button>
+</form>
