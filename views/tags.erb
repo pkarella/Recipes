@@ -1,0 +1,20 @@
+<h1>Add tags to your tag</h1>
+
+
+<div class="well">
+  <% if @tags.any?()%>
+    <h3>Click here to edit</h3>
+    <ul>
+      <%@tags.each() do |single_tag|%>
+      <li><%=single_tag.term%></li>
+    </ul>
+    <%end%>
+    <%end%>
+</div>
+
+
+<form action="/tag_form" method="post">
+  <label for="term">Enter the term of your tag that you'll attach to your recipe</label>
+  <input type="text" name="term">
+  <button type="submit">Add</button>
+</form>

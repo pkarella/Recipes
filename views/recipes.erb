@@ -1,0 +1,17 @@
+<div class="well">
+  <% if @recipes.any?()%>
+    <h3>Click here to edit</h3>
+    <ul>
+      <%@recipes.each() do |single_recipe|%>
+      <li><a href= "/recipe/<%=single_recipe.id()%>"><%=single_recipe.name()%></a></li>
+    </ul>
+    <%end%>
+    <%end%>
+</div>
+
+
+<form action="/recipe_form" method="post">
+  <label for="name">Enter the name of your recipe</label>
+  <input type="text" name="name">
+  <button type="submit">Add</button>
+</form>

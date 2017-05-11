@@ -1,0 +1,16 @@
+<div class="well">
+  <h1><%=@recipe.name()%></h1>
+
+  <% if @tags.any?() %>
+    <h3>Tags:</h3>
+
+    <ul>
+      <% @tags.each() do |tag| %>
+      <% if tag.id == @recipe.id %>
+        <li><%= tag.term()%> </li>
+        <% end %>
+      <% end %>
+    <% end %>
+    </ul>
+
+</div>
